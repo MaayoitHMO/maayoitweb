@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import {
   ArrowUpRight,
@@ -9,7 +12,56 @@ import {
   HeadphonesIcon,
 } from "lucide-react";
 
+const TO_EMAIL = "operations@maayoithealth.org";
+const CC_EMAIL = "info@maayoithealth.org";
+
 export default function JoinNetworkPage() {
+  const [form, setForm] = useState({
+    facility: "",
+    state: "",
+    city: "",
+    address: "",
+    category: "Primary Healthcare Centre / General Clinic",
+    director: "",
+    phone: "",
+    email: "",
+  });
+
+  const update =
+    (key: keyof typeof form) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+      setForm((f) => ({ ...f, [key]: e.target.value }));
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const subject = `Hospital Pre-Qualification — ${form.facility || "New facility"}`;
+    const body = [
+      `Facility name: ${form.facility}`,
+      `State: ${form.state}`,
+      `City / Town: ${form.city}`,
+      `Full physical address: ${form.address}`,
+      `Facility category: ${form.category}`,
+      `Medical director: ${form.director}`,
+      `Direct phone: ${form.phone}`,
+      `Official email: ${form.email}`,
+    ].join("\n");
+
+    const params = new URLSearchParams({
+      cc: CC_EMAIL,
+      subject,
+      body,
+    });
+    const url = `mailto:${TO_EMAIL}?${params.toString().replace(/\+/g, "%20")}`;
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.rel = "noopener";
+    a.target = "_self";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  };
+
   const benefits = [
     {
       num: "i.",
@@ -139,9 +191,12 @@ export default function JoinNetworkPage() {
                 </p>
               </header>
 
-              <form className="bg-cream p-7 md:p-9 space-y-7">
+              <form onSubmit={handleSubmit} className="bg-cream p-7 md:p-9 space-y-7">
                 <Field label="Facility name" required>
                   <Input
+                    required
+                    value={form.facility}
+                    onChange={update("facility")}
                     placeholder="e.g. St. Luke's Specialist Hospital"
                     className="border-0 border-b border-ink/30 rounded-none bg-transparent h-12 px-0 text-base focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-wine placeholder:text-ink-mute/60"
                   />
@@ -150,12 +205,18 @@ export default function JoinNetworkPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <Field label="State" required>
                     <Input
+                      required
+                      value={form.state}
+                      onChange={update("state")}
                       placeholder="e.g. Kwara"
                       className="border-0 border-b border-ink/30 rounded-none bg-transparent h-12 px-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-wine"
                     />
                   </Field>
                   <Field label="City / Town" required>
                     <Input
+                      required
+                      value={form.city}
+                      onChange={update("city")}
                       placeholder="e.g. Ilorin"
                       className="border-0 border-b border-ink/30 rounded-none bg-transparent h-12 px-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-wine"
                     />
@@ -164,13 +225,21 @@ export default function JoinNetworkPage() {
 
                 <Field label="Full physical address" required>
                   <Input
+                    required
+                    value={form.address}
+                    onChange={update("address")}
                     placeholder="Street address"
                     className="border-0 border-b border-ink/30 rounded-none bg-transparent h-12 px-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-wine"
                   />
                 </Field>
 
                 <Field label="Facility category" required>
-                  <select className="w-full h-12 border-0 border-b border-ink/30 bg-transparent text-base focus:outline-none focus:border-wine">
+                  <select
+                    required
+                    value={form.category}
+                    onChange={update("category")}
+                    className="w-full h-12 border-0 border-b border-ink/30 bg-transparent text-base focus:outline-none focus:border-wine"
+                  >
                     <option>Primary Healthcare Centre / General Clinic</option>
                     <option>Specialist Hospital</option>
                     <option>Dental Clinic</option>
@@ -183,12 +252,18 @@ export default function JoinNetworkPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <Field label="Medical director's name" required>
                     <Input
+                      required
+                      value={form.director}
+                      onChange={update("director")}
                       placeholder="Full Name"
                       className="border-0 border-b border-ink/30 rounded-none bg-transparent h-12 px-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-wine"
                     />
                   </Field>
                   <Field label="Direct phone number" required>
                     <Input
+                      required
+                      value={form.phone}
+                      onChange={update("phone")}
                       type="tel"
                       placeholder="+234..."
                       className="border-0 border-b border-ink/30 rounded-none bg-transparent h-12 px-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-wine"
@@ -198,6 +273,9 @@ export default function JoinNetworkPage() {
 
                 <Field label="Official email address" required>
                   <Input
+                    required
+                    value={form.email}
+                    onChange={update("email")}
                     type="email"
                     placeholder="contact@hospital.com"
                     className="border-0 border-b border-ink/30 rounded-none bg-transparent h-12 px-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-wine"

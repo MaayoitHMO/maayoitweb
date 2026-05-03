@@ -33,7 +33,7 @@ export function Navbar() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full border-b border-ink/15 transition-colors",
-        scrolled ? "bg-cream/85 backdrop-blur-md" : "bg-cream"
+        scrolled ? "bg-cream/85 backdrop-blur-md" : "bg-cream",
       )}
     >
       {/* Publication strip */}
@@ -41,7 +41,7 @@ export function Navbar() {
         <span>Vol. I — The Care Quarterly</span>
         <span className="flex items-center gap-4">
           <span>Ilorin · Kwara · Nigeria</span>
-          <span className="hidden lg:inline">+234 (800) 000 0000</span>
+          <span className="hidden lg:inline">+2348090733060</span>
         </span>
       </div>
 
@@ -52,11 +52,7 @@ export function Navbar() {
           aria-label="Maayoit Healthcare Limited — Home"
           className="group shrink-0 -my-1"
         >
-          <MhlLogoImage
-            priority
-            height={48}
-            className="hidden sm:block"
-          />
+          <MhlLogoImage priority height={48} className="hidden sm:block" />
           <MhlMark className="sm:hidden h-9 w-auto" />
         </Link>
 
@@ -66,14 +62,16 @@ export function Navbar() {
             const active =
               item.href === "/"
                 ? pathname === "/"
-                : pathname.startsWith(item.href.split("/").slice(0, 2).join("/"));
+                : pathname.startsWith(
+                    item.href.split("/").slice(0, 2).join("/"),
+                  );
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
                   "group relative flex items-baseline gap-1.5 px-3 py-2 text-sm tracking-tight transition-colors",
-                  active ? "text-ink" : "text-ink-soft hover:text-ink"
+                  active ? "text-ink" : "text-ink-soft hover:text-ink",
                 )}
               >
                 <span className="font-mono text-[10px] text-ink-mute group-hover:text-wine transition-colors">
@@ -114,7 +112,9 @@ export function Navbar() {
                 className="inline-flex items-center gap-2 px-3 py-2 border border-ink/20 rounded-full text-ink hover:bg-ink hover:text-cream transition-colors"
               >
                 <Menu className="h-4 w-4" />
-                <span className="text-xs uppercase tracking-widest font-mono">Menu</span>
+                <span className="text-xs uppercase tracking-widest font-mono">
+                  Menu
+                </span>
               </button>
             </SheetTrigger>
             <SheetContent
