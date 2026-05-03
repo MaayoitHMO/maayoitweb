@@ -299,62 +299,53 @@ export default function Home() {
       <section className="px-4 md:px-6 lg:px-10 py-20 md:py-28 border-b border-ink/15 bg-cream-soft">
         <div className="grid grid-cols-12 gap-6 md:gap-10 mb-14">
           <div className="col-span-12 md:col-span-7">
-            <p className="stamp mb-6">§ 02 — A plan for every life</p>
+            <p className="stamp mb-6">§ 02 — Four programmes</p>
             <h3 className="font-display text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95]">
-              Five programs.
+              One programme for every
               <br />
-              <span className="font-italic-serif text-wine">One</span> standard
-              of care.
+              <span className="font-italic-serif text-wine">stage</span> of life.
             </h3>
           </div>
           <div className="col-span-12 md:col-span-5 md:pt-12 text-ink-soft text-pretty">
-            From premium private cover for executives, to community-rooted social
-            schemes for the informal sector — Maayoit's programs are written for
-            every shape of Nigerian life. Choose by who you are, not by tier.
+            PHIP for corporates, individuals and families — with eight Maaycare
+            and specialty plans nested inside. Then TISHIP, CBSHIP and SHIP for
+            the institutions and communities that hold us up.
           </div>
         </div>
 
         <div className="grid grid-cols-12 gap-4 md:gap-6">
           <PlanPreview
             href="/health-plans#phip"
-            num="01"
+            num="I"
             tag="PHIP"
-            title="The standard of private excellence."
-            desc="Flagship private plan with Platinum, Gold, Silver & Bronze tiers — for individuals, families and corporates."
+            title="The flagship private family."
+            desc="Five Maaycare tiers (Classic → Pro) plus Maaywise (50+) and MaayMart maternity."
             tone="wine"
             big
           />
           <PlanPreview
             href="/health-plans#tiship"
-            num="02"
+            num="II"
             tag="TISHIP"
             title="Securing the future of education."
-            desc="Tertiary cover for students nationwide."
+            desc="Tertiary institution scheme — universities, polytechnics & colleges."
             tone="moss"
           />
           <PlanPreview
             href="/health-plans#cbship"
-            num="03"
+            num="III"
             tag="CBSHIP"
             title="Healthcare for the heartland."
-            desc="Community-based cover for the informal sector."
+            desc="Community-based cover for trade unions, cooperatives and informal groups."
             tone="clay"
           />
           <PlanPreview
             href="/health-plans#ship"
-            num="04"
+            num="IV"
             tag="SHIP"
-            title="The foundation of collective wellness."
-            desc="Social plan for formal sector & organised groups."
+            title="So young scholars never miss a chapter."
+            desc="Cover for primary and secondary school pupils."
             tone="ochre"
-          />
-          <PlanPreview
-            href="/health-plans#nhia"
-            num="05"
-            tag="NHIA Plan"
-            title="National standard. Maayoit quality."
-            desc="Accredited public-sector cover since 2000."
-            tone="wine"
           />
         </div>
 
@@ -492,15 +483,15 @@ export default function Home() {
               quote:
                 "When my daughter needed surgery, I called Maayoit at 11pm. By 7am the next morning her bed at the partner hospital was confirmed. That's the only review I'll ever need to give.",
               name: "Mrs. Adebayo",
-              tag: "PHIP Family Royal · Lagos",
+              tag: "Maaycare Deluxe+ · Lagos",
               photo:
                 "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=facearea&facepad=2.5&w=200&h=200&q=80",
             },
             {
               quote:
-                "Our SME has been on Corporate Silver for six years. Claims clear in two weeks, our staff don't dread enrolment, and HR sends us thank-you notes.",
+                "Our SME has been on Maaycare Executive for six years. Claims clear in two weeks, our staff don't dread enrolment, and HR sends us thank-you notes.",
               name: "Engr. Chukwu",
-              tag: "Corporate Silver · Port Harcourt",
+              tag: "Maaycare Executive · Port Harcourt",
               photo:
                 "https://images.unsplash.com/photo-1645736593731-4eef033ac37a?auto=format&fit=facearea&facepad=2.5&w=200&h=200&q=80",
             },

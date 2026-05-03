@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { ArrowUpRight, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import {
+  ArrowUpRight,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
 import { MhlMark } from "@/components/Logo";
 
 export function Footer() {
@@ -13,9 +19,9 @@ export function Footer() {
               key={i}
               className="font-display italic text-3xl md:text-5xl text-cream/85 whitespace-nowrap"
             >
-              Healthcare that stands in for family. <span className="text-ochre mx-6">✦</span>{" "}
-              Care without confusing tiers.{" "}
-              <span className="text-ochre mx-6">✦</span>{" "}
+              Healthcare that stands in for family.{" "}
+              <span className="text-ochre mx-6">✦</span> Care without confusing
+              tiers. <span className="text-ochre mx-6">✦</span>{" "}
             </span>
           ))}
         </div>
@@ -41,8 +47,8 @@ export function Footer() {
             </div>
             <p className="mt-6 max-w-md text-cream/70 text-base leading-relaxed">
               Maayoit Healthcare Limited — rooted in Ilorin since 2000, serving
-              individuals, communities, schools and corporates across Nigeria with
-              empathy-first medical cover.
+              individuals, communities, schools and corporates across Nigeria
+              with empathy-first medical cover.
             </p>
           </div>
 
@@ -115,9 +121,12 @@ export function Footer() {
         {/* Contact ledger */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-cream/15 py-8 mb-10">
           {[
-            ["Address", "123 Health Avenue\nIlorin, Kwara State, Nigeria"],
-            ["Telephone", "+234 (800) 000-0000"],
-            ["Email", "support@maayoit.com"],
+            [
+              "Address",
+              " Opposite G.s.s Maraba Along Old Jebba Rd, Ilorin, Kwara State, Nigeria",
+            ],
+            ["Telephone", "+2348090733060"],
+            ["Email", "info@maayoithealth.org"],
           ].map(([label, value]) => (
             <div key={label}>
               <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-cream/55 mb-2">
@@ -133,7 +142,10 @@ export function Footer() {
         {/* Colophon */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 text-cream/55 text-xs font-mono uppercase tracking-[0.18em]">
           <div className="space-y-2">
-            <p>© {new Date().getFullYear()} Maayoit Healthcare Limited · RC-XXXXXXX</p>
+            <p>
+              © {new Date().getFullYear()} Maayoit Healthcare Limited ·
+              RC-XXXXXXX
+            </p>
             <p>Set in Fraunces & DM Sans · Printed on the web</p>
           </div>
           <div className="flex items-center gap-6">

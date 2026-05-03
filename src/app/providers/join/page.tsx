@@ -15,7 +15,7 @@ export default function JoinNetworkPage() {
       num: "i.",
       icon: <Zap className="w-6 h-6" strokeWidth={1.5} />,
       title: "Automated Claims",
-      desc: "Claims processed end-to-end on Maaysoft — 14-day payment turnaround on every verified submission.",
+      desc: "End-to-end claims processing — 14-day payment turnaround on every verified submission.",
     },
     {
       num: "ii.",
@@ -55,9 +55,8 @@ export default function JoinNetworkPage() {
             <span className="font-italic-serif text-wine">MHL</span>.
           </h1>
           <div className="col-span-12 lg:col-span-3 lg:pb-4 text-ink-soft text-pretty">
-            Join Nigeria's most technologically advanced HMO network — automated
-            claims processing, 24/7 provider support, and a steady stream of
-            satisfied enrollees.
+            Join one of Nigeria's most respected HMO networks — prompt claims,
+            24/7 provider support, and a steady stream of satisfied enrollees.
           </div>
         </div>
       </section>
@@ -223,6 +222,94 @@ export default function JoinNetworkPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* TARIFF AGREEMENTS */}
+      <section className="px-4 md:px-6 lg:px-10 py-20 md:py-28 border-t border-ink/15 bg-cream-soft">
+        <div className="grid grid-cols-12 gap-6 mb-12">
+          <div className="col-span-12 md:col-span-7">
+            <p className="stamp mb-6">§ 03 — Tariff Agreements</p>
+            <h2 className="font-display text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95]">
+              Pick the agreement
+              <br />
+              that fits your{" "}
+              <span className="font-italic-serif text-wine">facility</span>.
+            </h2>
+          </div>
+          <p className="col-span-12 md:col-span-5 md:pt-12 text-ink-soft text-lg leading-relaxed text-pretty">
+            Every accredited HCF signs onto one of four tariff frameworks. Each
+            covers different scopes of service and aligns to the relevant
+            regulatory body's price schedule.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-ink/15 border-y-2 border-ink">
+          {[
+            {
+              num: "i.",
+              code: "NHIA Basic",
+              tone: "var(--wine)",
+              desc: "Aligned to the National Health Insurance Authority's basic benefit package — primary care, common procedures, and the standard drug formulary.",
+              tag: "National regulator",
+            },
+            {
+              num: "ii.",
+              code: "NHIA Custom",
+              tone: "var(--ochre)",
+              desc: "NHIA-aligned but tailored for facilities offering specialised services — surgery, advanced diagnostics or sub-specialty practice.",
+              tag: "Specialised NHIA",
+            },
+            {
+              num: "iii.",
+              code: "MHL Basic",
+              tone: "var(--moss)",
+              desc: "Maayoit Healthcare Limited's in-house basic agreement — for clinics serving members on the Maaycare Classic and Deluxe tiers.",
+              tag: "Maayoit standard",
+            },
+            {
+              num: "iv.",
+              code: "MHL Custom",
+              tone: "var(--clay)",
+              desc: "MHL's premium agreement — for facilities supporting Maaycare Executive / Pro members, MaayMart+ maternity and bespoke corporate programmes.",
+              tag: "Maayoit premium",
+            },
+          ].map((t) => (
+            <article
+              key={t.code}
+              className="bg-cream p-7 md:p-8 hover:bg-ink hover:text-cream transition-colors group"
+            >
+              <div className="flex items-start justify-between mb-8">
+                <span
+                  className="num-badge text-5xl"
+                  style={{ color: t.tone }}
+                >
+                  {t.num}
+                </span>
+                <span
+                  className="w-10 h-10 rounded-full grid place-items-center"
+                  style={{ background: t.tone, color: "var(--cream)" }}
+                >
+                  <ShieldCheck className="w-4 h-4" strokeWidth={1.5} />
+                </span>
+              </div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-mute group-hover:text-cream/60 mb-2">
+                {t.tag}
+              </p>
+              <h3 className="font-display text-2xl md:text-3xl tracking-tight mb-3 leading-tight">
+                {t.code}
+              </h3>
+              <p className="text-sm leading-relaxed opacity-80 text-pretty">
+                {t.desc}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <p className="mt-8 font-display italic text-xl md:text-2xl text-ink-soft max-w-3xl">
+          Your provider relations contact will help you choose during the
+          accreditation visit — and we publish the full tariff schedules for
+          partner facilities to review.
+        </p>
       </section>
     </div>
   );

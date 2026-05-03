@@ -12,13 +12,13 @@ const FAQS = [
     cat: "Enrollment",
     question: "How quickly does my Maayoit cover begin once I enrol?",
     answer:
-      "Coverage begins the moment your enrolment documents are verified — typically within 24 hours of submission. You'll receive your member ID, e-ID card, and welcome pack as soon as your account is activated, and you can use any of our 500+ partner hospitals from day one.",
+      "Coverage begins 30 days after enrolment is completed and payment is received. This 30-day waiting period allows us to set up your account, verify your information, and ensure everything is in place for a smooth healthcare experience. Our support team is always here to help if you have any questions during the process.",
   },
   {
     cat: "Coverage",
     question: "What services are actually covered under my plan?",
     answer:
-      "Every Maayoit plan covers specialist consultations, in-patient and out-patient care, prescription drugs from our approved formulary, maternity and paediatrics, dental and optical basics, preventive screenings, and access to our 24/7 helpline. Specific benefit limits vary by plan — see your member handbook for the full list.",
+      "This is strictly a question for your specific plan, as coverage varies across our different programmes and tiers. Generally, we cover a comprehensive range of services including outpatient consultations, inpatient care, maternity services, emergency care, and prescription medications. For the exact details of what's included in your plan, contact our support team for a personalized breakdown.",
   },
   {
     cat: "Coverage",
@@ -40,9 +40,9 @@ const FAQS = [
   },
   {
     cat: "Plans",
-    question: "What is the difference between PHIP and SHIP?",
+    question: "How are Maayoit's programmes organised?",
     answer:
-      "PHIP is our private, highly customisable plan for individuals and corporations who want perks like private wards and international referrals. SHIP is a structured social plan designed for organised groups who need standardised, reliable cover. Both are NHIA-aligned — they differ in flexibility, not in clinical quality.",
+      "We have four programmes. PHIP is our private flagship for corporates, individuals and families — and it contains eight plans (the five Maaycare tiers plus Maaywise for adults 50+, MaayMart and MaayMart+ for maternity). TISHIP covers tertiary institution students, CBSHIP covers community and informal-sector groups, and SHIP covers pupils in primary and secondary schools. All four are NHIA-aligned.",
   },
   {
     cat: "Students",
@@ -61,12 +61,6 @@ const FAQS = [
     question: "How can my company book a Health Sensitization Session?",
     answer:
       "Organisations on Corporate, SME and Community plans are entitled to regular sensitization sessions. Book an on-site or virtual session via our Resources page — or speak directly with your dedicated Maayoit account manager.",
-  },
-  {
-    cat: "Claims",
-    question: "How long does it take Maayoit to settle a hospital claim?",
-    answer:
-      "Verified claims are settled within 14 days. The hospital files directly with us — you don't pay first and chase reimbursement. As long as the service is covered under your plan and the facility is in-network, the bill is ours.",
   },
 ];
 
@@ -91,8 +85,8 @@ export default function FAQsPage() {
             <span className="font-italic-serif text-wine">answers</span>.
           </h1>
           <p className="col-span-12 lg:col-span-3 lg:pb-4 text-ink-soft text-lg leading-relaxed text-pretty">
-            The most common queries about enrolment, Maaysoft, our plans, and how to
-            get the most out of your Maayoit cover.
+            The most common queries about enrolment, Maaysoft, our plans, and
+            how to get the most out of your Maayoit cover.
           </p>
         </div>
       </section>
@@ -147,9 +141,9 @@ export default function FAQsPage() {
               <span className="font-italic-serif text-blush">question?</span>
             </h2>
             <p className="mt-6 max-w-xl text-cream/75 text-lg leading-relaxed text-pretty">
-              Our member care team is on duty around the clock. Call, write, or ask
-              your dedicated account manager — we reply in plain language, no
-              jargon, no hold music.
+              Our member care team is on duty around the clock. Call, write, or
+              ask your dedicated account manager — we reply in plain language,
+              no jargon, no hold music.
             </p>
           </div>
           <div className="col-span-12 md:col-span-5 space-y-4">
@@ -166,12 +160,12 @@ export default function FAQsPage() {
               </span>
             </a>
             <a
-              href="mailto:support@maayoit.com"
+              href="mailto:info@maayoithealth.org"
               className="group flex items-center justify-between border border-cream/30 pl-6 pr-3 py-4 rounded-full hover:bg-cream/10 transition-colors"
             >
               <span className="flex items-center gap-3">
                 <Mail className="w-5 h-5" />
-                <span>support@maayoit.com</span>
+                <span>info@maayoithealth.org</span>
               </span>
               <span className="w-10 h-10 rounded-full bg-cream text-ink grid place-items-center group-hover:rotate-45 transition-transform">
                 <ArrowUpRight className="w-5 h-5" />
