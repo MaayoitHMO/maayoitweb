@@ -142,11 +142,7 @@ export function Footer() {
         {/* Colophon */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 text-cream/55 text-xs font-mono uppercase tracking-[0.18em]">
           <div className="space-y-2">
-            <p>
-              © {new Date().getFullYear()} Maayoit Healthcare Limited ·
-              RC-XXXXXXX
-            </p>
-            <p>Set in Fraunces & DM Sans · Printed on the web</p>
+            <p>© {new Date().getFullYear()} Maayoit Healthcare Limited</p>
           </div>
           <div className="flex items-center gap-6">
             <Link href="#" aria-label="Facebook" className="hover:text-blush">
