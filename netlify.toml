@@ -9,6 +9,18 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+[[redirects]]
+  from = "/webmail"
+  to = "https://webmail.maayoithealth.org/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/webmail/*"
+  to = "https://webmail.maayoithealth.org/:splat"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]

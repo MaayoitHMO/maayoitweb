@@ -24,9 +24,34 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://maayoithealth.org"),
   title: "Maayoit — Healthcare That Stands In For Family",
   description:
     "Professional medical cover designed with empathy. From individual care to community-wide health solutions across Nigeria.",
+  openGraph: {
+    title: "Maayoit — Healthcare That Stands In For Family",
+    description:
+      "Professional medical cover designed with empathy. From individual care to community-wide health solutions across Nigeria.",
+    url: "https://maayoithealth.org",
+    siteName: "Maayoit Healthcare Limited",
+    images: [
+      {
+        url: "/seoimage.png",
+        width: 467,
+        height: 342,
+        alt: "Maayoit Healthcare Limited",
+      },
+    ],
+    locale: "en_NG",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maayoit — Healthcare That Stands In For Family",
+    description:
+      "Professional medical cover designed with empathy. From individual care to community-wide health solutions across Nigeria.",
+    images: ["/seoimage.png"],
+  },
 };
 
 export default function RootLayout({
