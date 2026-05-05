@@ -10,6 +10,7 @@ import {
   Users,
   Sparkles,
   HeadphonesIcon,
+  X,
 } from "lucide-react";
 
 const TO_EMAIL = "operations@maayoithealth.org";
@@ -26,6 +27,9 @@ export default function JoinNetworkPage() {
     phone: "",
     email: "",
   });
+  const [submitted, setSubmitted] = useState<null | { facility: string }>(
+    null
+  );
 
   const update =
     (key: keyof typeof form) =>
@@ -60,6 +64,22 @@ export default function JoinNetworkPage() {
     document.body.appendChild(a);
     a.click();
     a.remove();
+
+    setSubmitted({ facility: form.facility || "your facility" });
+  };
+
+  const closeModal = () => {
+    setSubmitted(null);
+    setForm({
+      facility: "",
+      state: "",
+      city: "",
+      address: "",
+      category: "Primary Healthcare Centre / General Clinic",
+      director: "",
+      phone: "",
+      email: "",
+    });
   };
 
   const benefits = [
@@ -394,6 +414,93 @@ export default function JoinNetworkPage() {
           partner facilities to review.
         </p>
       </section>
+
+      {submitted && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="success-title"
+          className="fixed inset-0 z-50 grid place-items-center p-4 animate-in fade-in duration-200"
+        >
+          <button
+            type="button"
+            aria-label="Close"
+            onClick={closeModal}
+            className="absolute inset-0 bg-ink/70 backdrop-blur-sm"
+          />
+
+          <div className="relative w-full max-w-md bg-cream border-2 border-ink rounded-md overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200">
+            <div className="pointer-events-none absolute -top-20 -right-20 w-64 h-64 halftone opacity-[0.08]" />
+
+            <button
+              type="button"
+              onClick={closeModal}
+              aria-label="Close"
+              className="absolute top-4 right-4 w-9 h-9 rounded-full grid place-items-center text-ink-soft hover:bg-ink hover:text-cream transition-colors z-10"
+            >
+              <X className="w-4 h-4" strokeWidth={1.5} />
+            </button>
+
+            <div className="bg-ink text-cream p-7 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-cream/60 mb-3">
+                § Form 04 — Received
+              </p>
+              <div className="flex items-start gap-4">
+                <span className="w-12 h-12 rounded-full bg-blush/15 grid place-items-center shrink-0 mt-1">
+                  <CheckCircle2
+                    className="w-6 h-6 text-blush"
+                    strokeWidth={1.5}
+                  />
+                </span>
+                <h3
+                  id="success-title"
+                  className="font-display text-3xl md:text-4xl tracking-tight leading-[0.95]"
+                >
+                  Submission{" "}
+                  <span className="font-italic-serif text-blush">
+                    received
+                  </span>
+                  .
+                </h3>
+              </div>
+            </div>
+
+            <div className="p-7 md:p-8 space-y-5">
+              <p className="text-ink-soft leading-relaxed text-pretty">
+                Thank you — we&apos;ve queued your pre-qualification request for{" "}
+                <span className="font-medium text-ink">
+                  {submitted.facility}
+                </span>
+                . Our provider relations team will reach out within{" "}
+                <span className="font-italic-serif text-wine">48 hours</span>.
+              </p>
+
+              <div className="border-t border-ink/15 pt-5 space-y-2">
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-mute">
+                  Sent to
+                </p>
+                <p className="text-sm font-mono text-ink">
+                  {TO_EMAIL}
+                </p>
+                <p className="text-sm font-mono text-ink-soft">
+                  cc {CC_EMAIL}
+                </p>
+              </div>
+
+              <button
+                type="button"
+                onClick={closeModal}
+                className="group w-full bg-wine text-cream rounded-full pl-6 pr-3 py-3.5 hover:bg-ink transition-colors flex items-center justify-between"
+              >
+                <span className="text-base">Done</span>
+                <span className="w-9 h-9 rounded-full bg-cream text-wine grid place-items-center group-hover:rotate-45 transition-transform">
+                  <ArrowUpRight className="w-4 h-4" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
