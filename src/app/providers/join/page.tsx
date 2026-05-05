@@ -67,7 +67,7 @@ export default function JoinNetworkPage() {
       num: "i.",
       icon: <Zap className="w-6 h-6" strokeWidth={1.5} />,
       title: "Automated Claims",
-      desc: "End-to-end claims processing — 14-day payment turnaround on every verified submission.",
+      desc: "End-to-end claims processing and turnaround on every verified submission.",
     },
     {
       num: "ii.",
@@ -97,7 +97,9 @@ export default function JoinNetworkPage() {
 
         <div className="flex items-center justify-between mb-12 text-[11px] uppercase tracking-[0.22em] font-mono text-ink-soft">
           <span className="stamp">§ For Providers</span>
-          <span className="hidden md:inline">Pre-qualification opens 48-hour review</span>
+          <span className="hidden md:inline">
+            Pre-qualification opens 48-hour review
+          </span>
         </div>
 
         <div className="grid grid-cols-12 gap-6 items-end">
@@ -183,15 +185,19 @@ export default function JoinNetworkPage() {
                 </p>
                 <h2 className="font-display text-3xl md:text-4xl tracking-tight leading-tight">
                   Tell us about your{" "}
-                  <span className="font-italic-serif text-blush">facility</span>.
+                  <span className="font-italic-serif text-blush">facility</span>
+                  .
                 </h2>
                 <p className="mt-3 text-cream/70 text-sm max-w-md">
-                  Our provider relations team will reach out within 48 hours for an
-                  initial inspection.
+                  Our provider relations team will reach out within 48 hours for
+                  an initial inspection.
                 </p>
               </header>
 
-              <form onSubmit={handleSubmit} className="bg-cream p-7 md:p-9 space-y-7">
+              <form
+                onSubmit={handleSubmit}
+                className="bg-cream p-7 md:p-9 space-y-7"
+              >
                 <Field label="Facility name" required>
                   <Input
                     required
@@ -286,7 +292,9 @@ export default function JoinNetworkPage() {
                   type="submit"
                   className="group w-full bg-wine text-cream rounded-full pl-6 pr-3 py-4 hover:bg-ink transition-colors flex items-center justify-between"
                 >
-                  <span className="text-base">Submit qualification request</span>
+                  <span className="text-base">
+                    Submit qualification request
+                  </span>
                   <span className="w-10 h-10 rounded-full bg-cream text-wine grid place-items-center group-hover:rotate-45 transition-transform">
                     <ArrowUpRight className="w-5 h-5" />
                   </span>
@@ -357,10 +365,7 @@ export default function JoinNetworkPage() {
               className="bg-cream p-7 md:p-8 hover:bg-ink hover:text-cream transition-colors group"
             >
               <div className="flex items-start justify-between mb-8">
-                <span
-                  className="num-badge text-5xl"
-                  style={{ color: t.tone }}
-                >
+                <span className="num-badge text-5xl" style={{ color: t.tone }}>
                   {t.num}
                 </span>
                 <span
