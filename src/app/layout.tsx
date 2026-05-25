@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
@@ -67,6 +68,9 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1 relative z-[1]">{children}</main>
         <Footer />
+        <Script id="quickchat-widget" strategy="afterInteractive">
+          {`(function(e,a,d,i,c,t=a.createElement(d)){e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},t.src=i,t.async=1,a.body.insertAdjacentElement("beforeend",t)})(window,document,"script","https://bubble.quickchat.ai/chat.js","_quickchat");_quickchat("init", "2wtzwro2tf");`}
+        </Script>
       </body>
     </html>
   );
